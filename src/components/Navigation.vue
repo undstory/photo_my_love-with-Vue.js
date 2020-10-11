@@ -2,6 +2,7 @@
 
     <div class="nav">
         <div class="container">
+            
             <div class="nav__main">
                 <div class="nav__logo"><router-link to="/" class="nav__logo">photo_my_love</router-link></div>
                 <nav class="nav__menu">
