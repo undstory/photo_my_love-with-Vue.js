@@ -1,19 +1,13 @@
-# photo_my_love
+# Photo_my_love -> multi-page website with-Vue.js
 
-## Project setup
-```
-npm install
-```
+I designed and created this project myself with my favourite framework --> Vue.js (one and only). My knowledge of Vue.js is not very impressive, I know very well that I still have a lot to learn, but Vue absorbed me completely... This project is another attempt to use the knowledge gained so far in practice.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Created with:
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* HTML
+* CSS
+* SASS
+* Flexbox
+* JavaScript (with ES6)
+* Vue.js <3
+* RWD of course
