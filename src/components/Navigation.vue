@@ -2,27 +2,37 @@
 
     <div class="nav">
         <div class="container">
-            
+
             <div class="nav__main">
-                <div class="nav__logo"><router-link to="/" class="nav__logo">photo_my_love</router-link></div>
+               
+                    <div class="nav__logo"><router-link to="/" class="nav__logo">photo_my_love</router-link></div>
+        
                 <nav class="nav__menu">
                     <router-link to="/" class="nav__link">Home</router-link>
                     <router-link to="/about" class="nav__link">About</router-link>
                 </nav>
             </div>
            
-           <button class="nav__contact"><router-link to="/contact" class="nav__contact--link">Contact</router-link></button>
+            <button class="nav__contact"><router-link to="/contact" class="nav__contact--link">Contact</router-link></button>
+            <button class="nav__mobile--btn" @click="$root.$emit('toggleMenu')"><i class="fas fa-bars"></i></button>
+
         
         </div>
-     
+        <mobile-menu></mobile-menu>
    
     </div>
 </template>
 
 <script>
 
+import MobileMenu from './MobileMenu'
+
 export default {
-    name: 'Navi'
+    name: 'Navi',
+    components: {
+        MobileMenu
+    },
+  
 }
 </script>
 
@@ -82,5 +92,33 @@ export default {
             font-size: 1rem;
             letter-spacing: 1px;
         }
+    }
+
+    .nav__mobile--btn {
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+
+        i {
+            color: $font-color;
+            font-size: 2.2rem;
+        }
+    }
+
+    .nav__mobile--btn {
+        display: none;
+    }
+
+    @media all and (max-width: 768px) {
+        .nav__menu, .nav__contact {
+            display: none;
+        }
+
+        .nav__mobile--btn {
+            display: block;
+        }
+
+       
     }
 </style>
