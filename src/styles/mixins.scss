@@ -2,3 +2,12 @@
     max-width: 1280px;
     margin: 0 auto;
 }
+
+@mixin btn {
+    outline: none;
+    border: 2px solid $font-color;
+    border-radius:  15px;
+    background-color: transparent;
+    padding: .8rem 1.5rem;
+    cursor: pointer;
+}

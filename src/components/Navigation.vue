@@ -80,11 +80,7 @@ export default {
     }
 
     .nav__contact {
-        border: 2px solid $font-color;
-        border-radius:  15px;
-        background-color: transparent;
-        padding: .8rem 1.5rem;
-
+        @include btn;
         &--link {
             text-decoration: none;
             color: $font-color;
