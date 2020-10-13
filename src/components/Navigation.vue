@@ -2,25 +2,19 @@
 
     <div class="nav">
         <div class="container">
-
             <div class="nav__main">
-               
-                    <div class="nav__logo"><router-link to="/" class="nav__logo">photo_my_love</router-link></div>
-        
+                <div class="nav__logo"><router-link to="/" class="nav__logo">photo_my_love</router-link></div>
                 <nav class="nav__menu">
                     <router-link to="/" class="nav__link">Home</router-link>
                     <router-link to="/about" class="nav__link">About</router-link>
                 </nav>
             </div>
-           
             <button class="nav__contact"><router-link to="/contact" class="nav__contact--link">Contact</router-link></button>
             <button class="nav__mobile--btn" @click="$root.$emit('toggleMenu')"><i class="fas fa-bars"></i></button>
-
-        
         </div>
         <mobile-menu></mobile-menu>
-   
     </div>
+
 </template>
 
 <script>
@@ -32,7 +26,6 @@ export default {
     components: {
         MobileMenu
     },
-  
 }
 </script>
 
@@ -64,6 +57,10 @@ export default {
         color: $font-color;
         text-decoration: none;
         padding: 0 2rem 0 1rem;
+
+        &:hover {
+            color: $link-color;
+        }
     }
 
     .nav__menu {
@@ -81,12 +78,22 @@ export default {
 
     .nav__contact {
         @include btn;
+
+        &:hover {
+            background-color: $link-color;
+        }
+
         &--link {
             text-decoration: none;
             color: $font-color;
             text-transform: uppercase;
             font-size: 1rem;
             letter-spacing: 1px;
+
+            &:hover {
+            color: $background-top;
+            font-weight: bold;
+            }
         }
     }
 
@@ -107,14 +114,25 @@ export default {
     }
 
     @media all and (max-width: 768px) {
+
         .nav__menu, .nav__contact {
             display: none;
         }
 
         .nav__mobile--btn {
             display: block;
-        }
+        } 
+    }
 
-       
+     @media all and (max-width: 480px) {
+
+        .nav {
+             padding-right: .8rem;
+             padding-left: .8rem;
+        }
+        .nav__logo {
+             font-size: 2rem;
+             padding-right: 1rem;
+        }
     }
 </style>
