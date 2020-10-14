@@ -3,7 +3,7 @@
     <div class="nav">
         <div class="container">
             <div class="nav__main">
-                <div class="nav__logo"><router-link to="/" class="nav__logo">photo_my_love</router-link></div>
+                <div class="nav__logo"><router-link to="/" class="nav__logo">photoMyLove</router-link></div>
                 <nav class="nav__menu">
                     <router-link to="/" class="nav__link">Home</router-link>
                     <router-link to="/about" class="nav__link">About</router-link>
