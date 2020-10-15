@@ -77,4 +77,46 @@ export default {
     }
 
 
+    @media all and (max-width: 768px) {
+
+        .showcase {
+            &__title {
+                font-size: 3.5rem;
+                padding-right: 1.5rem;
+                padding-left: 3rem;
+            }
+
+            &__quote {
+                padding-left: 1.5rem;
+                padding-right: 3rem;
+
+                &--text {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 480px) {
+        .showcase {
+
+            &__wrapper {
+               flex-direction: column;
+               padding-top: 4rem;
+            }
+            &__title {
+                font-size: 3rem;
+                padding-left: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            &__quote {
+                padding-right: 3rem;
+                &--text {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
 </style>
