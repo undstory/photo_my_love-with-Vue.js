@@ -49,6 +49,9 @@ export default {
         align-items: flex-end;
         text-align: right;
         padding: 3rem 2rem 0 0;
+        background-image: url(../assets/slice2.png);
+        background-repeat: no-repeat;
+        background-position: left top 3rem;
     }
 
     .mobile__nav {
