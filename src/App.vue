@@ -19,7 +19,10 @@ export default {
   name: 'App',
   components: {
     Navi
-  }
+  },
+  
+  
+
 }
 
 </script>
