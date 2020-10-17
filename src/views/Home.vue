@@ -21,7 +21,7 @@
                 </h3>
                 <div class="details__list">
                     <div class="details__item">
-                        <img class="details__item--icon" src="../assets/pic1.png" alt="">
+                        <img class="details__item--icon" src="../assets/pic1.png" alt="picture irrelevent">
                         <div class="details__item--box">
                             <h4 class="details__item--title">Secret of a great picture</h4>
                             <p class="details__item--text">Nothing in this world is entitled to 
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                      <div class="details__item">
-                        <img class="details__item--icon" src="../assets/pic2.png" alt="">
+                        <img class="details__item--icon" src="../assets/pic2.png" alt="picture irrelevent">
                          <div class="details__item--box">
                             <h4 class="details__item--title">Everything is an emotion</h4>
                             <p class="details__item--text">A world of emotion, experience, 
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                      <div class="details__item">
-                        <img class="details__item--icon" src="../assets/pic3.png" alt="">
+                        <img class="details__item--icon" src="../assets/pic3.png" alt="picture irrelevent">
                          <div class="details__item--box">
                             <h4 class="details__item--title">Tell me the story</h4>
                             <p class="details__item--text">The more complex and seemingly in-depth
@@ -74,19 +74,31 @@ export default {
   },
   data() {
     return {
-       images: [
-                {
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Kwiatek.jpg"
-                },
+        images: [
+            {
+                "url" : "/photo1.jpg"
+            },
 
-                {
-                     "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Rosa_villosa_1_MHNT.jpg"
-                },
+            {
+                "url" : "/photo2.jpg"
+            },
 
-                {
-                     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Chamomile%40original_size.jpg"
-                }
-            ]
+            {
+                "url" : "/photo3.jpg"
+            },
+
+            {
+                "url" : "/photo3.jpg"
+            },
+
+            {
+                "url" : "/photo4.jpg"
+            },
+
+            {
+                "url" : "/photo5.jpg"
+            }
+        ]
     }
   }
 }
@@ -198,7 +210,7 @@ export default {
     }
 
     .slider {
-        background-color: $background-down;
+        background-color: $background-top;
     }
 
     .container {
