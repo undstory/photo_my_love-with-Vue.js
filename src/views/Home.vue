@@ -60,7 +60,44 @@
       
             </div>
         </section>
+        <section class="reference">
+            <div class="reference__wrapper container">
+                <h2 class="reference__title">Happy Customers</h2>
+                <h3 class="reference__subtitle">some of my best clients</h3>
+                <div class="reference__list">
+                    <div class="reference__item">
+                        <img class="reference__item--photo" :src="whereIsAphoto(photo[0])" alt="photo of author"/>
+                        <h3 class="reference__item--name">Alicia Coconut</h3>
+                        <h4 class="reference__item--role">CEO of Portage</h4>
+                        <p class="reference__item--cite">"Cooperation with
+                             this brand was very fruitful. The artist's passion 
+                             was felt by us throughout the entire period.
+                            The author puts her whole heart into the joint venture."</p>
+                    </div>
+                    <div class="reference__item">
+                        <img class="reference__item--photo" :src="whereIsAphoto(photo[1])" alt="photo of author"/>
+                        <h3 class="reference__item--name">Alicia Coconut</h3>
+                        <h4 class="reference__item--role">CEO of Portage</h4>
+                        <p class="reference__item--cite">"Cooperation with
+                             this brand was very fruitful. The artist's passion 
+                             was felt by us throughout the entire period.
+                            The author puts her whole heart into the joint venture."</p>
+                    </div>
+                    <div class="reference__item">
+                        <img class="reference__item--photo" :src="whereIsAphoto(photo[2])" alt="photo of author"/>
+                        <h3 class="reference__item--name">Alicia Coconut</h3>
+                        <h4 class="reference__item--role">CEO of Portage</h4>
+                        <p class="reference__item--cite">"Cooperation with
+                             this brand was very fruitful. The artist's passion 
+                             was felt by us throughout the entire period.
+                            The author puts her whole heart into the joint venture."</p>
+                    </div>
+                </div>
+            </div>
+           
+        </section>
         <!-- *cytaty pochodzą https://www.mimeophotos.com/blog/inspiring-photography-quotes -->
+        <!-- zdjecia klietów pochodzą z unsplash -->
     </div>
 </template>
 
@@ -99,8 +136,19 @@ export default {
             {
                 "url" : "/photo5.jpg"
             }
+        ],
+        photo: [
+            "/client1.png",
+            "/client2.png",
+            "/client3.png"
         ]
     }
+  },
+
+  methods: {
+      whereIsAphoto(image) {
+          return require('../assets/photo' + image);
+      }
   }
 }
 
@@ -223,6 +271,79 @@ export default {
         }
     }
 
+    .reference {
+        background-color: $alternative-color;
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 6rem 1rem 4rem;
+        }
+
+        &__title {
+           font-size: 3rem;
+           font-weight: bold;
+           padding-bottom: 1.2rem;
+        }
+
+        &__subtitle {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            margin: 0 .5rem;
+            background-color: $background-down;
+            padding: 2rem 1rem;
+            box-shadow: 0 15px 6px -6px #242000;
+            cursor: pointer;
+            transition: all .3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            &--photo {
+                width: 6rem;
+                height: 6rem;
+                border-radius: 50%;
+                border: 5px solid $background-top;
+            }
+            
+            &--name {
+                font-size: 1.3rem;
+                padding: 1rem .5rem .5rem;
+            }
+
+            &--role {
+                font-size: 1rem;
+            }
+
+            &--cite {
+                font-size: .9rem;
+                padding: 2rem 1rem;
+                line-height: 1.6;
+                text-align: center;
+            }
+        }
+
+
+    }
+
     .container {
         @include container;
     }
@@ -267,6 +388,25 @@ export default {
                 flex-direction: column;
                 justify-content: center;
                 padding: 2rem;
+            }
+        }
+
+        .reference {
+
+            &__wrapper {
+                padding: 3rem 2rem .5rem;
+            }
+
+            &__list {
+                flex-direction: column;
+            }
+
+            &__item {
+                margin-bottom: 2rem;
+
+                &:hover {
+                    transform: scale(1);
+                }
             }
         }
     }

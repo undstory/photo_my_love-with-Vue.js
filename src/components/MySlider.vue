@@ -2,9 +2,7 @@
     <div class="slider">
             <div class="slide">
                 <button class="slide__btn slide__btn--prev" :disabled="start" @click="changeSlide(-1)">&lt;</button>
-                
                     <img class="slide__img" :src="getImgUrl(images[currentIndex].url)" />
-               
                 <button class="slide__btn slide__btn--next" :disabled="end" @click="changeSlide(1)">&gt;</button>
             </div>
     </div>
@@ -110,6 +108,8 @@ export default {
         max-width: 100%;
     }
 }
+
+
 
 
 @media all and (max-width: 480px) {
