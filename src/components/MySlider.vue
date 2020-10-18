@@ -1,14 +1,12 @@
 <template>
     <div class="slider">
-        <button class="slider__btn--prev" :disabled="start" @click="changeSlide(-1)">P</button>
-
-        <div class="slides">
-         
-            <img :src="getImgUrl(images[currentIndex].url)" /> 
-
-        </div>
-
-        <button class="slider__btn--next" :disabled="end" @click="changeSlide(1)">N</button>
+            <div class="slide">
+                <button class="slide__btn slide__btn--prev" :disabled="start" @click="changeSlide(-1)">&lt;</button>
+                
+                    <img class="slide__img" :src="getImgUrl(images[currentIndex].url)" />
+               
+                <button class="slide__btn slide__btn--next" :disabled="end" @click="changeSlide(1)">&gt;</button>
+            </div>
     </div>
 </template>
 
@@ -66,3 +64,58 @@ export default {
     }    
 }
 </script>
+
+<style lang="scss" scoped>
+
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.slider {
+    max-width: 100%;
+}
+
+.slide {
+    position: relative;
+    z-index: 2;
+
+    &__btn {
+        position: absolute;
+        height: 4rem;
+        width: 2rem;
+        opacity: .5;
+        z-index: 1000;
+        border: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: $background-top;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__btn--prev {
+        top: 45%;
+        left: 0;
+    }
+
+     &__btn--next {
+        top: 45%;
+        right: 0;
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+}
+
+
+@media all and (max-width: 480px) {
+    .slide__btn {
+        display: none;
+    }
+}
+
+</style>

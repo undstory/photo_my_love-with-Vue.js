@@ -55,8 +55,9 @@
         </section>
         <section class="slider">
             <div class="slider__wrapper container">
-                Tu będzie slider
+             
                 <my-slider :images="images"></my-slider>
+      
             </div>
         </section>
         <!-- *cytaty pochodzą https://www.mimeophotos.com/blog/inspiring-photography-quotes -->
@@ -164,6 +165,10 @@ export default {
             padding: 10rem 0 8rem;
         }
 
+        &__list {
+            padding-right: 5rem;
+        }
+
          &__title {
             font-size: 2.5rem;
             padding-right: 5rem;
@@ -210,7 +215,12 @@ export default {
     }
 
     .slider {
-        background-color: $background-top;
+        background-color: $background-top; 
+
+        &__wrapper {
+            width: 100%;
+            padding: 3rem 0;
+        }
     }
 
     .container {
@@ -236,6 +246,29 @@ export default {
                 }
             }
         }
+
+        .details {
+
+            &__wrapper {
+                flex-direction: column;
+                align-items: center;
+                padding-top: 8rem;
+                padding-bottom: 4rem;
+            }
+
+            &__title {
+                align-self: center;
+                padding-bottom: 4rem;
+            }
+
+            &__list {
+                align-self: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 2rem;
+            }
+        }
     }
 
     @media all and (max-width: 480px) {
@@ -255,6 +288,35 @@ export default {
                 padding-right: 3rem;
                 &--text {
                     font-size: 1rem;
+                }
+            }
+        }
+
+        .details {
+
+            &__wrapper {
+                padding-top: 4rem;
+                padding-bottom: 2rem;
+            }
+
+            &__title {
+                font-size: 1.8rem;
+                padding: 0 2rem 2rem;
+            }
+
+            &__item {
+
+                &--icon {
+                    padding-right: 1rem;
+                }
+
+                &--title {
+                    font-size: 1.2rem;
+                }
+
+                &--text {
+                    font-size: .8rem;
+                    line-height: 1.6;
                 }
             }
         }
