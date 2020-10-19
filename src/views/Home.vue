@@ -2,7 +2,7 @@
     <div class="main">
         <section class="showcase">
             <div class="showcase__wrapper container">
-                <h2 class="showcase__title">Look at <span class="showcase__title--letter">this</span></h2>
+                <div class="showcase__title">Look at <span class="showcase__title--letter">this</span></div>
                 <blockquote class="showcase__quote">
                     <p class="showcase__quote--text">"It does seem odd that we focus so much of 
                         our attention on this sea of averages, when we should be looking 
@@ -67,12 +67,12 @@
                 <div class="reference__list">
                     <div class="reference__item">
                         <img class="reference__item--photo" :src="whereIsAphoto(photo[0])" alt="photo of author"/>
-                        <h3 class="reference__item--name">Alicia Coconut</h3>
-                        <h4 class="reference__item--role">CEO of Portage</h4>
-                        <p class="reference__item--cite">"Cooperation with
-                             this brand was very fruitful. The artist's passion 
-                             was felt by us throughout the entire period.
-                            The author puts her whole heart into the joint venture."</p>
+                        <h3 class="reference__item--name">Jason Facelift</h3>
+                        <h4 class="reference__item--role">CTO of 1.2.3 Design</h4>
+                        <p class="reference__item--cite">"Wow! It was great to be able to watch this great artist. 
+                            The final effect exceeded my greatest expectations!
+                            It was amazing! Inspiration times a million!
+                            I totally recommend."</p>
                     </div>
                     <div class="reference__item">
                         <img class="reference__item--photo" :src="whereIsAphoto(photo[1])" alt="photo of author"/>
@@ -86,16 +86,23 @@
                     <div class="reference__item">
                         <img class="reference__item--photo" :src="whereIsAphoto(photo[2])" alt="photo of author"/>
                         <h3 class="reference__item--name">Alicia Coconut</h3>
-                        <h4 class="reference__item--role">CEO of Portage</h4>
-                        <p class="reference__item--cite">"Cooperation with
-                             this brand was very fruitful. The artist's passion 
-                             was felt by us throughout the entire period.
-                            The author puts her whole heart into the joint venture."</p>
+                        <h4 class="reference__item--role">Design Artist in Big Brand</h4>
+                        <p class="reference__item--cite">"The best artist we've ever worked with. 
+                            A truly professional and totally creative. Punctual and completely 
+                            devoted to her passion, which she miraculously transformed into a profitable 
+                            business."</p>
                     </div>
                 </div>
             </div>
            
         </section>
+        <div class="break">
+            <div class="break__wrapper container">
+                <h2 class="break__slogan">What are you waiting for?</h2>
+                <button class="break__contact"><router-link to="/contact" class="break__contact--link">Contact</router-link></button>
+            </div>    
+        </div>
+        <my-footer></my-footer>
         <!-- *cytaty pochodzą https://www.mimeophotos.com/blog/inspiring-photography-quotes -->
         <!-- zdjecia klietów pochodzą z unsplash -->
     </div>
@@ -104,11 +111,13 @@
 <script>
 
 import MySlider from '../components/MySlider'
+import MyFooter from '../components/MyFooter'
 
 export default {
   name: 'Home',
   components: {
-      MySlider
+      MySlider,
+      MyFooter
   },
   data() {
     return {
@@ -307,6 +316,7 @@ export default {
             align-items: center;
             padding: 1rem;
             margin: 0 .5rem;
+            width: 31%;
             background-color: $background-down;
             padding: 2rem 1rem;
             box-shadow: 0 15px 6px -6px #242000;
@@ -340,8 +350,47 @@ export default {
                 text-align: center;
             }
         }
+    }
 
+    .break {
+        background-color: $background-top;
+        background-image: url(../assets/slice1.png);
+        background-repeat: no-repeat;
+        background-position: right 50% bottom;
+        background-size: 200px 100px;
 
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+            padding: 6rem 2rem;
+        }
+
+        &__slogan {
+            font-size: 2.5rem;
+            font-weight: bold;
+            padding-left: 2rem;
+        }
+
+        &__contact {
+        @include btn;
+
+        &:hover {
+            background-color: $link-color;
+        }
+
+        &--link {
+            text-decoration: none;
+            color: $font-color;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 1px;
+
+            &:hover {
+            color: $background-top;
+            font-weight: bold;
+            }
+        }
+    }
     }
 
     .container {
@@ -403,10 +452,24 @@ export default {
 
             &__item {
                 margin-bottom: 2rem;
+                width: 70%;
 
                 &:hover {
                     transform: scale(1);
                 }
+            }
+        }
+
+        .break {
+            background-position: left bottom;
+            &__wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &__slogan {
+                padding-bottom: 2rem;
+                text-align: center;
             }
         }
     }
@@ -458,6 +521,19 @@ export default {
                     font-size: .8rem;
                     line-height: 1.6;
                 }
+            }
+        }
+
+        .break {
+            background-size: 200px 100px;
+            &__slogan {
+                padding: 1rem 2rem;
+                font-size: 2rem;
+                line-height: 1.4;
+            }
+
+            &__wrapper {
+                padding-top: 3rem;
             }
         }
     }
