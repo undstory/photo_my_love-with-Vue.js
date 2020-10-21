@@ -38,6 +38,10 @@ export default {
     color: $font-color;
 }
 
+.container {
+  @include container;
+}
+
 
 
 
