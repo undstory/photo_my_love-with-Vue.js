@@ -4,6 +4,8 @@
             <div class="about__wrapper container">
                 <div class="about__description">
                     <h2 class="about__description--title">Behind the scene</h2>
+                    <img src="../assets/me.png" class="about__img2" alt="picture of author">
+
                     <h3 class="about__description--subtitle">Hello!</h3>
                     <p class="about__description--text">I'm Poland based freelance front-end developer, web designer, collage enthusiast.</p>
                     <p class="about__description--text">I am passionate about art, especially in the areas of graphics, illustration and photography.
@@ -51,6 +53,10 @@ export default {
             padding: 0 2rem;
         }
 
+        &__img2 {
+            display: none;
+        }
+
         &__description {
             display: flex;
             flex-direction: column;
@@ -95,6 +101,17 @@ export default {
         .about__img {
             display: none;
         }
+
+        .about__img2 {
+            display: inline-block;
+            width: 60%;
+            align-self: flex-end;
+            padding-right: 2rem;
+        }
+
+        .about__description--title {
+            padding-bottom: 2rem;
+        }
     }
 
     @media all and (max-width: 480px) {
@@ -106,6 +123,10 @@ export default {
 
             &__description {
                 padding-left: 2rem;
+            }
+
+            &__img2 {
+                display: none;;
             }
         }
     }
