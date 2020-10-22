@@ -46,8 +46,8 @@ export default {
         }
 
         &__img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 40%;
+            max-height: 40%;
             padding: 0 2rem;
         }
 
@@ -78,6 +78,36 @@ export default {
         }
     }
 
-   
+    @media all and (max-width: 1200px) {
+        .about__description {
+            &--text {
+                font-size: 1rem;
+            }
+        }
+
+        .about__wrapper {
+            align-items: flex-start;
+        }
+    }
+
+    @media all and (max-width: 768px) {
+
+        .about__img {
+            display: none;
+        }
+    }
+
+    @media all and (max-width: 480px) {
+
+        .about {
+            &__about {
+                padding-top: 3rem;
+            }
+
+            &__description {
+                padding-left: 2rem;
+            }
+        }
+    }
 
 </style>
