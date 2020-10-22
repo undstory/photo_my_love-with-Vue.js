@@ -126,7 +126,7 @@ export default {
             }
 
             &__img2 {
-                display: none;;
+                display: none;
             }
         }
     }
