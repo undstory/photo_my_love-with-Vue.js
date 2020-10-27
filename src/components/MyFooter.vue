@@ -17,6 +17,7 @@
                 </div>
                 <div class="footer__copy">Design & Code & Photo from gallery - 
                     all created by Undstory, 2020.<br />
+                    The inspiration comes from Frontend Mentor.<br />
                     Customer photos are taken from unsplash.</div>
            </div>
         </div>

@@ -19,12 +19,22 @@
                 <img src="../assets/me.png" class="about__img" alt="picture of author">
             </div>
         </section>
+        <my-team></my-team>
+        <my-footer></my-footer>
     </div>
 </template>
 
 <script>
+
+import MyFooter from '../components/MyFooter'
+import MyTeam from '../components/Myteam'
+
 export default {
-    name: 'About'
+    name: 'About',
+    components: {
+      MyFooter,
+      MyTeam
+  },
 }
 </script>
 
