@@ -3,13 +3,13 @@
        <div class="team__wrapper container">
            <h2 class="team__title">My favorite team</h2>
            <div class="team__box">
-               <div class="team__card">
-                   <div class="card team__card--obverse">
+               <!-- <div class="team__card">
+                   <div class="card team__card--obverse" v-if="obverse">
                         <img class="card__img" src="" alt="">
                         <h3 class="card__name">Lucy LaBelle</h3>
                         <h4 class="card__profession">Graphic Designer</h4>
                    </div>
-                   <div class="team__card--reverse">
+                   <div class="team__card--reverse" v-else>
                         <h3 class="card__name">Lucy LaBelle</h3>
                         <p class="card__words">The definition of happiness? When a beloved passion becomes work.</p>
                         <div class="card__social">
@@ -17,16 +17,33 @@
                             <a class="card__social--link"><i class="fab fa-facebook-square"></i></a>
                         </div>
                    </div>
-                   <button class="team__card--btn">Details</button>
-               </div>
+                   <button class="team__card--btn" @click="changeView">Details</button>
+               </div> -->
+               <team-card :obverse="obverse" @otherView="secondView"></team-card>
            </div>
        </div>
     </section>
 </template>
 
 <script>
+
+import TeamCard from './TeamCard';
+
 export default {
-    name: 'my-team'
+    name: 'my-team',
+    components: {
+        TeamCard
+    },
+    data() {
+        return {
+            obverse: true,
+        }
+    },
+    methods: {
+        secondView(value) {
+            this.obverse = value;
+        }
+    }
 }
 </script>
 
@@ -57,12 +74,6 @@ export default {
         flex-direction: row;
     }
 
-    // &__card {
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: center;
-    //     align-items: center;
-    // }
 }
 
 .container {

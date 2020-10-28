@@ -27,7 +27,7 @@
 <script>
 
 import MyFooter from '../components/MyFooter'
-import MyTeam from '../components/Myteam'
+import MyTeam from '../components/MyTeam'
 
 export default {
     name: 'About',
