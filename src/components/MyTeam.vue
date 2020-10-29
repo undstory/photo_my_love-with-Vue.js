@@ -2,7 +2,7 @@
     <section class="team">
        <div class="team__wrapper container">
            <h2 class="team__title">My favorite team</h2>
-           <div class="team__box">
+                <div class="team__box">
                <!-- <div class="team__card">
                    <div class="card team__card--obverse" v-if="obverse">
                         <img class="card__img" src="" alt="">
@@ -19,8 +19,9 @@
                    </div>
                    <button class="team__card--btn" @click="changeView">Details</button>
                </div> -->
-               <team-card :obverse="obverse" @otherView="secondView"></team-card>
-           </div>
+               <team-card :obverse="obverse" @otherView="secondView" v-for="person in team" v-bind:person="person" :key="person.name"></team-card>
+                
+                </div>
        </div>
     </section>
 </template>
@@ -37,6 +38,23 @@ export default {
     data() {
         return {
             obverse: true,
+            team: [
+                {
+                    name: 'Maria Ciuri',
+                    profession: 'web designer',
+                    words: 'My beloved Vue.js' 
+                },
+                {
+                    name: 'Ron Johnson',
+                    profession: 'web developer',
+                    words: 'Vue.js is my big love' 
+                },
+                 {
+                    name: 'Graham Pitt',
+                    profession: 'CTO',
+                    words: 'Great Vue.js forever!' 
+                },
+            ]
         }
     },
     methods: {
@@ -68,12 +86,6 @@ export default {
         font-weight: bold;
         padding: 5rem 2rem;
     }
-
-    &__box {
-        display: flex; 
-        flex-direction: row;
-    }
-
 }
 
 .container {
