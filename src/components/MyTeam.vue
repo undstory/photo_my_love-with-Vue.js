@@ -1,25 +1,10 @@
 <template>
     <section class="team">
        <div class="team__wrapper container">
-           <h2 class="team__title">My favorite team</h2>
+           <h2 class="team__title">My favorite team about myself</h2>
                 <div class="team__box">
-               <!-- <div class="team__card">
-                   <div class="card team__card--obverse" v-if="obverse">
-                        <img class="card__img" src="" alt="">
-                        <h3 class="card__name">Lucy LaBelle</h3>
-                        <h4 class="card__profession">Graphic Designer</h4>
-                   </div>
-                   <div class="team__card--reverse" v-else>
-                        <h3 class="card__name">Lucy LaBelle</h3>
-                        <p class="card__words">The definition of happiness? When a beloved passion becomes work.</p>
-                        <div class="card__social">
-                            <a class="card__social--link"><i class="fab fa-instagram-square"></i></a>
-                            <a class="card__social--link"><i class="fab fa-facebook-square"></i></a>
-                        </div>
-                   </div>
-                   <button class="team__card--btn" @click="changeView">Details</button>
-               </div> -->
-               <team-card :obverse="obverse" @otherView="secondView" v-for="person in team" v-bind:person="person" :key="person.name"></team-card>
+    
+                    <team-card  @otherView="otherView" v-for="person in team" v-bind:person="person" :key="person.name"></team-card>
                 
                 </div>
        </div>
@@ -37,29 +22,50 @@ export default {
     },
     data() {
         return {
-            obverse: true,
+           
             team: [
                 {
                     name: 'Maria Ciuri',
                     profession: 'web designer',
-                    words: 'My beloved Vue.js' 
+                    words: 'I am inspired by my world.',
+                    obverse: true,
                 },
                 {
                     name: 'Ron Johnson',
                     profession: 'web developer',
-                    words: 'Vue.js is my big love' 
+                    words: 'Vue.js is my greatest love.', 
+                    obverse: true,
                 },
-                 {
+                {
                     name: 'Graham Pitt',
                     profession: 'CTO',
-                    words: 'Great Vue.js forever!' 
+                    words: 'Learning and development forever!',
+                    obverse: true,
+                },
+                 {
+                    name: 'Jane Isuppose',
+                    profession: 'illustrator',
+                    words: 'Be yourself always and everywhere!',
+                    obverse: true,
+                },
+                 {
+                    name: 'Eva Van Der Holt',
+                    profession: 'Photoshop master',
+                    words: 'Still being creative.',
+                    obverse: true,
+                },
+                 {
+                    name: 'Chris Neverland',
+                    profession: 'web developer',
+                    words: 'I keep trying and never gives up.',
+                    obverse: true,
                 },
             ]
         }
     },
     methods: {
-        secondView(value) {
-            this.obverse = value;
+            otherView(value) {
+                this.team.obverse = value;
         }
     }
 }
@@ -85,6 +91,17 @@ export default {
         font-size: 3rem;
         font-weight: bold;
         padding: 5rem 2rem;
+    }
+
+    &__box {
+         display: grid;
+      grid-template-columns: 255px 255px 255px;
+      grid-template-rows: 281px 281px;
+      grid-row-gap: 76px;
+      grid-column-gap: 11px;
+      justify-content: center;
+      width: 100%;
+
     }
 }
 
