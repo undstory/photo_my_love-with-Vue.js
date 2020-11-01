@@ -94,14 +94,14 @@ export default {
     }
 
     &__box {
-         display: grid;
-      grid-template-columns: 255px 255px 255px;
-      grid-template-rows: 281px 281px;
-      grid-row-gap: 76px;
-      grid-column-gap: 11px;
-      justify-content: center;
-      width: 100%;
-
+        display: grid;
+        grid-template-columns: 27% 27% 27%;
+        grid-template-rows: 30% 30%;
+        grid-row-gap: 50%;
+        grid-column-gap: 5%;
+        justify-content: center;
+        width: 100%;
+        padding: 0 2rem 8rem;
     }
 }
 

@@ -1,12 +1,15 @@
 <template>
     <div>
+        
         <div class="team__card" >
-                    <div class="card team__card--obverse" v-if="look">
+                    <transition mode="out-in">
+                    <div class="card team__card--obverse" v-if="look" key="0">
                             <img class="card__img" src="" alt="">
                             <h3 class="card__name">{{ person.name }}</h3>
                             <h4 class="card__profession">{{ person.profession }}</h4>
                     </div>
-                    <div class="team__card--reverse" v-else>
+                     
+                    <div class="team__card--reverse" v-else key="">
                             <h3 class="card__name">{{ person.name }}</h3>
                             <p class="card__words">{{ person.words}}</p>
                             <div class="card__social">
@@ -14,7 +17,10 @@
                                 <a class="card__social--link"><i class="fab fa-facebook-square"></i></a>
                             </div>
                     </div>
-                    <button class="team__card--btn" @click="changeView">Details</button>
+                    </transition>
+           
+                    <button class="team__card--btn" @click="changeView">More...</button>
+
         </div>
         
  </div>
@@ -70,11 +76,40 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 1px solid red;
-        margin: 0 3%;
-        padding: 2rem
+        padding: 3rem 2rem;
+        position: relative;
+        border-radius: 10px;
+        border: 3px solid $background-down;
+        background-color: lighten($link-color, 8);
+
+        &--btn {
+            position: absolute;
+            bottom: -1.2rem;
+            padding: .3rem 1rem;
+            border: 3px solid $background-down;
+            background-color: $link-color;
+            font-size: 1.1rem;
+            text-transform:lowercase;
+            cursor: pointer;
+            outline: none;
+
+            &:hover {
+                background-color: $background-down;
+                color: $font-color;
+            }
+        }
     }
 }
+
+.v-enter-active, .v-leave-active {
+    transition: opacity .5s;
+}
+
+.v-enter, .v-leave-to {
+    opacity: 0;
+}
+
+
 
 
 </style>
