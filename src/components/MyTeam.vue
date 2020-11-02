@@ -27,38 +27,44 @@ export default {
                 {
                     name: 'Maria Ciuri',
                     profession: 'web designer',
-                    words: 'I am inspired by my world.',
+                    words: '"I am inspired by my world."',
                     obverse: true,
+                    photo: "/teamF.jpg"
                 },
                 {
                     name: 'Ron Johnson',
                     profession: 'web developer',
-                    words: 'Vue.js is my greatest love.', 
+                    words: '"Vue.js is my greatest love."', 
                     obverse: true,
+                    photo: "/teamM.jpg"
                 },
                 {
                     name: 'Graham Pitt',
                     profession: 'CTO',
-                    words: 'Learning and development forever!',
+                    words: '"Learning and development forever!"',
                     obverse: true,
+                    photo: "/teamM2.jpg"
                 },
                  {
                     name: 'Jane Isuppose',
                     profession: 'illustrator',
-                    words: 'Be yourself always and everywhere!',
+                    words: '"Be yourself always and everywhere!"',
                     obverse: true,
+                    photo: "/teamF2.jpg"
                 },
                  {
                     name: 'Eva Van Der Holt',
                     profession: 'Photoshop master',
-                    words: 'Still being creative.',
+                    words: '"Still being creative."',
                     obverse: true,
+                    photo: "/teamF3.jpg"
                 },
                  {
                     name: 'Chris Neverland',
                     profession: 'web developer',
-                    words: 'I keep trying and never gives up.',
+                    words: '"I keep trying and never gives up."',
                     obverse: true,
+                    photo: "/teamM3.jpg"
                 },
             ]
         }
@@ -79,6 +85,7 @@ export default {
 .team {
     background-color: $link-color;
     color: $background-top;
+    padding-bottom: 12rem;
 
     &__wrapper {
         display: flex;
@@ -101,12 +108,39 @@ export default {
         grid-column-gap: 5%;
         justify-content: center;
         width: 100%;
-        padding: 0 2rem 8rem;
+        padding: 0 0 8rem;
     }
 }
 
 .container {
     @include container;
+}
+
+@media all and (max-width: 768px) {
+    .team {
+
+        &__box {
+            grid-template-columns: 35% 35%;
+            grid-template-rows: .5% .5% .5%;
+            padding-bottom: 3rem;
+        }
+     
+    }
+}
+
+@media all and (max-width: 560px) {
+    .team {
+
+        padding-bottom: 5rem;
+
+           &__box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 70%;
+            padding-bottom: 1rem;
+    }
+}
 }
 
 </style>
