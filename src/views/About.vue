@@ -20,7 +20,10 @@
             </div>
         </section>
         <my-team></my-team>
-        <my-footer></my-footer>
+        <break></break>
+        <my-footer>
+            The inspiration comes from Frontend Mentor.<br/>
+        </my-footer>
     </div>
 </template>
 
@@ -28,12 +31,14 @@
 
 import MyFooter from '../components/MyFooter'
 import MyTeam from '../components/MyTeam'
+import Break from '../components/Break'
 
 export default {
     name: 'About',
     components: {
       MyFooter,
-      MyTeam
+      MyTeam,
+      Break
   },
 }
 </script>
@@ -48,6 +53,7 @@ export default {
             background-color: $background-top;
             min-height: 70vh;
             padding-top: 5rem;
+            padding-bottom: 4rem;
         }
 
         &__wrapper {

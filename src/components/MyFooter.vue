@@ -1,24 +1,25 @@
 <template>
     <footer class="footer">
         <div class="footer__wrapper container">
-           <div class="footer__top">
-               <h2 class="footer__logo"><router-link to="/" class="footer__logo">photoMyLove</router-link></h2>
-               <ul class="footer__social">
-                   <li><a class="footer__social--link"><i class="fab fa-facebook"></i></a></li>
-                   <li><a class="footer__social--link"><i class="fab fa-instagram-square"></i></a></li>
-                   <li><a class="footer__social--link"><i class="fab fa-behance-square"></i></a></li>
-                   <li><a class="footer__social--link"><i class="fab fa-dribbble-square"></i></a></li>
-               </ul>
-           </div>
-           <div class="footer__down">
+            <div class="footer__top">
+                <h2 class="footer__logo"><router-link to="/" class="footer__logo">photoMyLove</router-link></h2>
+                <ul class="footer__social">
+                    <li><a class="footer__social--link"><i class="fab fa-facebook"></i></a></li>
+                    <li><a class="footer__social--link"><i class="fab fa-instagram-square"></i></a></li>
+                    <li><a class="footer__social--link"><i class="fab fa-behance-square"></i></a></li>
+                    <li><a class="footer__social--link"><i class="fab fa-dribbble-square"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer__down">
                 <div class="footer__menu">
                     <router-link to="/" class="footer__link">Home</router-link>
                     <router-link to="/about" class="footer__link">About</router-link>
                 </div>
                 <div class="footer__copy">Design & Code & Photo from gallery - 
                     all created by Undstory, 2020.<br />
-                    The inspiration comes from Frontend Mentor.<br />
-                    Customer photos are taken from unsplash.</div>
+                    <slot></slot>
+                    Customer photos are taken from unsplash.
+                </div>
            </div>
         </div>
     </footer>
@@ -138,6 +139,4 @@ export default {
         }
     }
 }
-
-
 </style>

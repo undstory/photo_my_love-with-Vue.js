@@ -119,6 +119,8 @@ export default {
 @media all and (max-width: 768px) {
     .team {
 
+        padding-bottom: 18rem;
+
         &__box {
             grid-template-columns: 35% 35%;
             grid-template-rows: .5% .5% .5%;
@@ -132,6 +134,10 @@ export default {
     .team {
 
         padding-bottom: 5rem;
+
+            &__title {
+                padding-bottom: 3rem;
+            }
 
            &__box {
             display: flex;

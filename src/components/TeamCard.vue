@@ -162,7 +162,7 @@ export default {
 
 @media all and (max-width: 560px) {
     .team__card {
-        margin-top: 2.5rem;
+        margin-bottom: 5.5rem;
     }
 }
 
