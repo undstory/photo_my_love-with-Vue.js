@@ -1,11 +1,60 @@
 <template>
-    <div>
-        Contact
+    <div class="contact">
+        <section class="contact__contact">
+            <div class="contact__wrapper container">
+                <h2 class="contact__title">Please contact us...</h2>
+                <h3 class="contact__subtitle">We are always happy to find out what's on your mind</h3>
+                <my-form></my-form>
+            </div>
+        </section>        
     </div>
 </template>
 
 <script>
+
+import MyForm from '../components/MyForm'
+
 export default {
-    name: 'Contact'
+    name: 'Contact',
+    components: {
+        MyForm
+    }
 }
 </script>
+
+<style lang="scss" scoped>
+
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.contact {
+
+    &__contact {
+        background-color: $background-top;
+        padding-top: 7rem;
+        padding-bottom: 4rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: bold;
+        padding-bottom: 2rem;
+        color: $link-color;
+    }
+
+     &__subtitle {
+        font-size: 1.8rem;
+        // font-weight: bold;
+        padding-bottom: 4rem;
+        color: $link-color;
+    }
+}
+
+</style>
