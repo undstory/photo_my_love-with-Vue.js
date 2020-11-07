@@ -1,9 +1,10 @@
 <template>
-    <form action="#" class="form" @submit.prevent>
+    <form action="#" class="form" @submit.prevent novalidate>
        
         <input type="text" class="form__input field" name="firstName" v-model="firstName" placeholder="First name" @input="$v.firstName.$touch()" :class="{'errors': $v.firstName.$error}" />
         <p v-if="$v.firstName.$dirty && !$v.firstName.required">This field is required</p>
         <p v-if="$v.firstName.$dirty && !$v.firstName.minLength">At least two characters are required</p>
+        <p v-if="$v.firstName.$dirty && !$v.firstName.alpha">Only letters are accepted</p>
      
        
         <input type="text" class="form__input field" name="lastName" v-model="lastName" placeholder="Last name"  @input="$v.lastName.$touch()" :class="{'errors': $v.lastName.$error}" />
@@ -22,22 +23,22 @@
         <p v-if="$v.message.$dirty && !$v.message.maxLength">The message requires less than 500 characters</p>
 
         <div class="form__terms">
-            <input type="checkbox" class="form__input form__input--terms" v-model="terms" @input="$v.terms.$touch()" :class="{'errors': $v.terms.$error}"/>
-            <label class="form__terms--label special">I accept the terms and conditions
+            <input type="checkbox" class="form__input form__input--terms" v-model="$v.terms.$model" @change="$v.terms.$touch()" />
+            <label class="form__terms--label special" :class="{ 'errors__text' : $v.terms.$dirty && $v.terms.$invalid}">I accept the terms and conditions
             </label> 
-            <p v-if="$v.terms.$dirty && !$v.terms.required">This checkbox must be selected</p>
         </div>
         
         <button type="submit" class="form__btn field"  @click="checkForm">Send</button>
-        <pre> {{ $v }}
-        </pre>
+        <!-- <pre> {{ $v }}
+        </pre> -->
     </form>
+   
 </template>
 // 
 <script>
 
 import { validationMixin } from 'vuelidate';
-import { required, minLength, maxLength, email } from 'vuelidate/lib/validators';
+import { required, minLength, maxLength, email, alpha } from 'vuelidate/lib/validators';
 
 export default {
     name: "MyForm",
@@ -49,7 +50,8 @@ export default {
             companyName: "",
             email: "",
             message: "",
-            terms: false
+            terms: false,
+            submitStatus: null
         }
     },
     validations: {
@@ -69,10 +71,13 @@ export default {
         message: {
             required,
             minLength: minLength(20),
-            maxLength: maxLength(25)
+            maxLength: maxLength(500)
         },
         terms: {
-            required
+            required,
+            checked() {
+                return this.terms === true ? true : false; 
+            }
         }
 
     },
@@ -80,9 +85,17 @@ export default {
         
         checkForm() {
             this.$v.$touch()
-            if(!this.$v.$anyError) {
-                alert('Form is valid and ready to be submitted!');
+            if(this.$v.$invalid) {
+                
+                alert("Please fill the form correctly.")
+            } else {
+                alert("Sending");
+                setTimeout(() => {
+                    alert("Thanks for your message!");
+                }, 500)
             }
+
+            
         }
     }
 }
@@ -159,6 +172,11 @@ export default {
 
 .errors {
     border: 3px solid red;
+
+    &__text {
+        font-weight: bold;
+        color: red;
+    }
 }
 
 

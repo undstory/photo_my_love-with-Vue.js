@@ -6,18 +6,23 @@
                 <h3 class="contact__subtitle">We are always happy to find out what's on your mind</h3>
                 <my-form></my-form>
             </div>
-        </section>        
+        </section>
+        <my-footer>
+            The inspiration comes from Frontend Mentor.<br/>
+        </my-footer>        
     </div>
 </template>
 
 <script>
 
 import MyForm from '../components/MyForm'
+import MyFooter from '../components/MyFooter'
 
 export default {
     name: 'Contact',
     components: {
-        MyForm
+        MyForm,
+        MyFooter, 
     }
 }
 </script>
@@ -56,5 +61,6 @@ export default {
         color: $link-color;
     }
 }
+
 
 </style>
