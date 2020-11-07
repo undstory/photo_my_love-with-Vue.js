@@ -45,20 +45,33 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
+        line-height: 1.4;
     }
 
     &__title {
         font-size: 3rem;
         font-weight: bold;
-        padding-bottom: 2rem;
+        padding: 0 2rem 2rem;
         color: $link-color;
     }
 
      &__subtitle {
         font-size: 1.8rem;
         // font-weight: bold;
-        padding-bottom: 4rem;
+        padding: 0 2rem 4rem;
         color: $link-color;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .contact__title {
+        font-size: 2rem;
+    }
+
+    .contact__subtitle {
+        font-size: 1.5rem;
+        padding-bottom: 2rem;
     }
 }
 

@@ -1,7 +1,7 @@
 <template>
     <form action="#" class="form" @submit.prevent novalidate>
        
-        <input type="text" class="form__input field" name="firstName" v-model="firstName" placeholder="First name" @input="$v.firstName.$touch()" :class="{'errors': $v.firstName.$error}" />
+        <input type="text" class="form__input field" name="firstName" v-model="firstName" placeholder="First name" @input="$v.firstName.$touch()" :class="{'errors': $v.firstName.$error}" autofocus />
         <p v-if="$v.firstName.$dirty && !$v.firstName.required">This field is required</p>
         <p v-if="$v.firstName.$dirty && !$v.firstName.minLength">At least two characters are required</p>
         <p v-if="$v.firstName.$dirty && !$v.firstName.alpha">Only letters are accepted</p>
@@ -179,6 +179,16 @@ export default {
     }
 }
 
+
+@media all and (max-width: 768px) {
+    .form__input, .form__textarea {
+        width: 70%;
+    }
+
+    .form__terms--label, .special {
+        font-size: 1.2rem;
+    }
+}
 
 
 </style>
