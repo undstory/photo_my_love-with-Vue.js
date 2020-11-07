@@ -11,3 +11,7 @@ I designed and created this project myself with my favourite framework --> Vue.j
 * JavaScript (with ES6)
 * Vue.js <3
 * RWD of course
+
+## Vue.js - elements used: 
+
+### Vue-CLI, Single-file Components, Vue-Router, Props, Custom-Events, Slots, Transitions, Vuelidation etc.
