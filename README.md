@@ -15,3 +15,5 @@ I designed and created this project myself with my favourite framework --> Vue.j
 ## Vue.js - elements used: 
 
 ### Vue-CLI, Single-file Components, Vue-Router, Props, Custom-Events, Slots, Transitions, Vuelidation etc. etc.
+
+Live: https://photo-my-love-with-vue-js.undstory.vercel.app/#/
